@@ -1,0 +1,89 @@
+/*Write a program to find the nth Node in linked list from the end*/
+#include<stdio.h>
+#include<stdlib.h>
+#include<conio.h>
+struct Node
+{
+	int data;
+	struct Node * next;
+};
+
+
+struct Node * addNode(struct Node * h,int x)
+{
+
+
+	struct Node * newnode = (struct Node *)malloc(sizeof(struct Node));
+	newnode->next = NULL;
+	h->next = newnode;
+	newnode->data=x;
+
+	return newnode;
+
+}
+
+void nthNode(struct Node * head,int n,int c)
+{
+struct Node * temp=head;
+int x=c-n-1;
+while(x>=0)
+{
+temp=temp->next;
+x--;
+
+}
+ printf("%d",temp->data);
+
+}
+
+
+
+
+
+
+
+void main()
+{
+	struct Node * head;
+	struct Node * tail;
+		struct Node * temp;
+	int n,count=0,x;
+	char y;
+	clrscr();
+	 printf("enter values (after entering all values press any non-numeric symbol)");
+	 if(scanf("%d",&n))
+	{
+	 head = (struct Node *)malloc(sizeof(struct Node));
+	 tail = head;
+
+
+	 head->next = NULL;
+	 head->data = n;
+
+
+
+
+	while(scanf("%d",&n))
+	 {
+		tail = addNode(tail,n);
+
+	 }
+
+	scanf("%c",&y);
+	for(temp=head;temp!=NULL;temp=temp->next)
+	 count++;
+	 printf("enter the nth node from back\n");
+	 scanf("%d",&x);
+
+
+	nthNode(head,x,count);
+    }
+    else
+    {
+	printf(" please enter valid elements!!!");
+    }
+    getch();
+
+
+
+}
