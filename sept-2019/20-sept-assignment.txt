@@ -1,0 +1,36 @@
+/*write a program to reverse the consonants in given string.The vowels position must not be disturbed.*/#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+void main()
+{
+char s[50],temp;
+int i,n,k;
+clrscr();
+printf("enter the string");
+scanf("%s",s);
+n=strlen(s);
+k=n-1;
+for(i=0;i<n;i++)
+{
+	if(s[i]=='a'||s[i]=='e'||s[i]=='i'|| s[i]=='o'||s[i]=='u')
+	{}
+	else
+	{
+	if(k<=i+1)
+	break;
+	y: if(s[k]=='a'||s[k]=='e'||s[k]=='i'|| s[k]=='o'||s[k]=='u')
+	  {
+	  k--;
+	  goto y;
+	  }
+	temp=s[i];
+	s[i]=s[k];
+	s[k]=temp;
+	k--;
+
+
+	}
+}
+printf("%s",s);
+getch();
+}
