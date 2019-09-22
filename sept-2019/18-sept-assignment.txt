@@ -1,1 +1,31 @@
+/*Write program to find the frequency of characters ina given string */
+
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+void main()
+{
+char s[50];
+int i,j,count;
+clrscr();
+printf("enter the string");
+scanf("%s",s);
+for(i=0;i<strlen(s);i++)
+{count=0;
+	for(j=0;j<i;j++)
+	{
+	if(s[j]==s[i])
+	break;
+	}
+	if(j!=i)
+	continue;
+	for(j=0;j<strlen(s);j++)
+	{
+	if(s[i]==s[j])
+	count++;
+	}
+printf("%c = %d\n",s[i],count);
+}
+getch();
+}
 
