@@ -1,0 +1,40 @@
+/*Write a program to check if two strings are anagrams*/
+#include <stdio.h>
+#include <conio.h>
+void main()
+{
+int i,j,count=0,count1=0,x;
+char a[50],b[50];
+printf("Enter the strings to be compared");
+scanf("%s%s",a,b);
+if(strlen(a)!=strlen(b))
+   printf("Not anagrams");
+else{
+   for(i=0;i<strlen(a);i++){
+	count=count1=0;
+	for(j=0;j<strlen(a);j++)
+	{
+		if(a[i]==a[j])
+		count++;
+	}
+	for(j=0;j<strlen(a);j++)
+	{
+		if(a[i]==b[j])
+		break;
+	}
+	x=b[j];
+	for(j=0;j<strlen(a);j++)
+	{
+		if(x==b[j])
+		count1++;
+	}
+if(count1!=count)
+break;
+}
+if(count1!=count)
+printf("Not anagrams");
+else
+printf("Anagrams");
+}
+getch();
+}
